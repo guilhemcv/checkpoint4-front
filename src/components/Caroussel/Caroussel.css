@@ -1,0 +1,13 @@
+.carou {
+  width: 50%;
+  margin: 40px auto;
+}
+
+.imgcarou {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  background: rgba(0,0,0,.7);
+}

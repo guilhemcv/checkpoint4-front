@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+.bandeau {
+  height: 100px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accueiltitre {
+  text-align: center;
+  padding: auto;
+  font-family: 'Prompt', sans-serif;
+}
