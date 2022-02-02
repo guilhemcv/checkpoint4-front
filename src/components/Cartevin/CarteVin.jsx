@@ -39,7 +39,7 @@ function CarteVin({ vins }) {
     <div className="globalvin">
       {vins.map((vin, index) => (
         <div className="cardvin">
-          <Card className="card">
+          <Card className="card" style={{ border: 'none' }}>
             <Card.Img
               variant="top"
               src={vin.image}
