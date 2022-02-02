@@ -119,12 +119,15 @@ function Formulaire() {
         >
           Valider
         </Button>
-        <Button
-          className="buttonform"
-          type="submit"
-          variant="outline-success"
-        >
-          <Link className="link" to="/allwine">Retour</Link>
+        <Button className="buttonform" type="submit" variant="outline-success">
+          <Link className="link" to="/allwine">
+            Retour collection
+          </Link>
+        </Button>
+        <Button className="buttonform" type="submit" variant="outline-success">
+          <Link className="link" to="/">
+            Retour accueil
+          </Link>
         </Button>
       </Form>
     </div>

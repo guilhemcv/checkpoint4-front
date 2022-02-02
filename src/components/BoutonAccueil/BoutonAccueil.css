@@ -30,3 +30,12 @@
 .describouton {
   padding: auto 20px;
 }
+
+.linkmap {
+  text-decoration: none;
+  color: black;
+}
+.linkmap:hover {
+  text-decoration: none;
+  color: black;
+}
