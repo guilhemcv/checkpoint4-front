@@ -12,6 +12,12 @@
   margin-bottom: 50px;
 }
 
+.bouton:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
 .logobouton {
   width: 50px;
 }

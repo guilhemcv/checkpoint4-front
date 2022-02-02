@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
 
+.accueil {
+  background-color: #EEEEEE;
+}
+
 .bandeau {
   height: 100px;
   background-color: white;
@@ -12,6 +16,7 @@
   text-align: center;
   padding: auto;
   font-family: 'Prompt', sans-serif;
+  font-weight: bold;
 }
 
 .bout {

@@ -6,7 +6,7 @@ import databouton from '../../data/databouton';
 
 function Accueil() {
   return (
-    <div>
+    <div className="accueil">
       <div className="bandeau">
         <h1 className="accueiltitre">Bienvenue sur Wildo Vino</h1>
       </div>
