@@ -13,3 +13,10 @@
   padding: auto;
   font-family: 'Prompt', sans-serif;
 }
+
+.bout {
+  display: flex;
+  justify-content: space-around; 
+  margin: 50px auto;
+  flex-wrap: wrap;
+}

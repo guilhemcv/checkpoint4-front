@@ -13,8 +13,10 @@ function Caroussel() {
             alt="First slide"
           />
           <Carousel.Caption className="caption">
-            <h3>Bibliothèque</h3>
-            <p>Retrouvez toute votre collection de vins</p>
+            <h3 className="titrecarou">Bibliothèque</h3>
+            <p className="descricarou">
+              Retrouvez toute votre collection de vins
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -25,8 +27,8 @@ function Caroussel() {
           />
 
           <Carousel.Caption className="caption">
-            <h3>Filtres</h3>
-            <p>Classez les résultats par catégories, type de vin, région...</p>
+            <h3 className="titrecarou">Filtres</h3>
+            <p className="descricarou">Classez les résultats par catégories, type de vin, région...</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -37,9 +39,10 @@ function Caroussel() {
           />
 
           <Carousel.Caption className="caption">
-            <h3>Ajout / Modification</h3>
-            <p>
-              Ajoutez une bouteille ou modifiez une existante en fonction de vos achats
+            <h3 className="titrecarou">Ajout / Modification</h3>
+            <p className="descricarou">
+              Ajoutez une bouteille ou modifiez une existante en fonction de vos
+              achats
             </p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -51,10 +54,8 @@ function Caroussel() {
           />
 
           <Carousel.Caption className="caption">
-            <h3>Suppression</h3>
-            <p>
-              Une fois consommées, supprimez les bouteilles hors stock
-            </p>
+            <h3 className="titrecarou">Suppression</h3>
+            <p className="descricarou">Une fois consommées, supprimez les bouteilles hors stock</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
