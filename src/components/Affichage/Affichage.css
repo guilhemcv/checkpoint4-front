@@ -1,11 +1,27 @@
 .marg {
-  margin: 50px 47%;
+  margin: 50px 20px;
   text-align: center;
   display: flex;
 }
 
+.buttonaffichage {
+  display: flex;
+  justify-content: center;
+  flex-direction: space-around;
+}
+
 @media screen and (max-width: 400px) {
+  .buttonaffichage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  } 
   .marg {
-    margin: 50px 30%;
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    width: 100px;
   }
 }

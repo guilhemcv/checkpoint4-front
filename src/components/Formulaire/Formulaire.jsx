@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import './Formulaire.css';
 import axios from 'axios';
@@ -7,6 +7,7 @@ import axios from 'axios';
 function Formulaire() {
   const [addVin, setAddVin] = React.useState({});
   const url = 'http://localhost:3306/vin/ajouter';
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const valeur = e.target.value;
@@ -25,6 +26,7 @@ function Formulaire() {
         // eslint-disable-next-line no-console
         console.log(res.data);
         alert('Nouveau vin sauvegardé !');
+        navigate('/allwine');
       })
       .catch((error) => error);
   };

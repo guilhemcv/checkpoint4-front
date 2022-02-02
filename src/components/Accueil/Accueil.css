@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
 
 .accueil {
-  background-color: #EEEEEE;
+  background-image: url("../../assets/images/dessin.png");
+  background-position: center;
+  background-size: cover;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
 }
 
 .bandeau {
   height: 100px;
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .accueiltitre {
@@ -17,11 +22,27 @@
   padding: auto;
   font-family: 'Prompt', sans-serif;
   font-weight: bold;
+  color: black;
 }
 
 .bout {
   display: flex;
+  width: 50vw;
   justify-content: space-around; 
-  margin: 50px auto;
+  margin: 80px 0;
   flex-wrap: wrap;
+}
+
+.pres {
+  max-width: 80%;
+  font-size: 25px;
+  margin: 20px auto;
+  text-align: center;
+  font-family: 'Prompt', sans-serif;
+}
+
+@media screen and (max-width: 400px) {
+  .accueil {
+    background-image: none;
+}
 }

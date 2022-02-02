@@ -17,11 +17,26 @@ function Affichage() {
 
   return (
     <div>
-      <Button className="buttonform marg" type="submit" variant="outline-success">
-        <Link className="link" to="/">
-          Retour accueil
-        </Link>
-      </Button>
+      <div className="buttonaffichage">
+        <Button
+          className=" marg"
+          type="submit"
+          variant="outline-success"
+        >
+          <Link className="link" to="/">
+            Retour accueil
+          </Link>
+        </Button>
+        <Button
+          className=" marg"
+          type="submit"
+          variant="outline-success"
+        >
+          <Link className="link" to="/addwine">
+            Ajouter un vin
+          </Link>
+        </Button>
+      </div>
       <div className="cartevin">
         <CarteVin vins={vins} />
       </div>
