@@ -1,0 +1,27 @@
+.carou {
+  width: 50%;
+  margin: 40px auto;
+}
+
+.imgcarou {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  background: rgba(0,0,0,.7);
+  width: auto;
+  height: auto;
+}
+
+@media screen and (max-width: 320px) {
+  .carou {
+    width: 80%;
+  }
+  .titrecarou {
+    font-size: 20px;
+  }
+  .descricarou {
+    font-size: 15px;
+  }
+}
