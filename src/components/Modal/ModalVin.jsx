@@ -33,9 +33,13 @@ function ModalVin(props) {
           width="50%"
           margin="50px auto"
         />
-        <h5>Millesime : {vins[index].annee}</h5>
-        <h6>Degrés : {vins[index].degre}°</h6>
-        <h6>Bouteilles en stock : {vins[index].nb_bouteilles}</h6>
+        <div style={{ width: '100%', margin: '50px auto' }}>
+          <h6>Type de vin : {vins[index].couleur_vin}</h6>
+          <h6>Région : {vins[index].nom_region}</h6>
+          <h6>Millesime : {vins[index].annee}</h6>
+          <h6>Degrés : {vins[index].degre}°</h6>
+          <h6>Bouteilles en stock : {vins[index].nb_bouteilles}</h6>
+        </div>
         <p>{vins[index].description}</p>
       </Modal.Body>
       <Modal.Footer>
