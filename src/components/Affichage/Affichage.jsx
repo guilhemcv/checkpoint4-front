@@ -15,9 +15,7 @@ function Affichage() {
 
   return (
     <div className="cartevin">
-      {vins.map((vin) => (
-        <CarteVin vin={vin} />
-      ))}
+      <CarteVin vins={vins} />
     </div>
   );
 }

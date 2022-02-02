@@ -3,6 +3,13 @@
   text-align: center;
 }
 
+.globalvin {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .card {
   margin: 20px;
+  width: 18rem;
 }
