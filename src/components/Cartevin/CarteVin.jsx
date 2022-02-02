@@ -57,7 +57,7 @@ function CarteVin({ vins }) {
                 variant="outline-success"
                 onClick={() => onShowModal(index)}
               >
-                Go somewhere
+                Plus de détails
               </Button>
             </Card.Body>
             <Modal
