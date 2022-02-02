@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Accueil from './components/Accueil/Accueil';
 import './App.css';
 import Affichage from './components/Affichage/Affichage';
+import Formulaire from './components/Formulaire/Formulaire';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Accueil />} />
         <Route exact path="/allwine" element={<Affichage />} />
+        <Route exact path="/addwine" element={<Formulaire />} />
       </Routes>
     </div>
   );

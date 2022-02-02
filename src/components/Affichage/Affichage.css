@@ -1,0 +1,11 @@
+.marg {
+  margin: 50px 47%;
+  text-align: center;
+  display: flex;
+}
+
+@media screen and (max-width: 400px) {
+  .marg {
+    margin: 50px 30%;
+  }
+}

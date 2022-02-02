@@ -7,9 +7,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 20px;
 }
 
 .card {
-  margin: 20px;
+  margin-top: 20px;
   width: 18rem;
+
+}
+
+@media screen and (max-width: 400px) {
+ .card {
+   margin: 20px auto;
+ } 
 }
