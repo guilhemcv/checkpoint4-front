@@ -15,7 +15,7 @@ function FormulaireModif() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3306/vin').then((response) => {
+    axios.get('http://localhost:3306/vin/ajout').then((response) => {
       setOneWine(
         response.data.filter((vin) => parseInt(vin.id, 10) === parseInt(id, 10))[0]);
     });
@@ -41,6 +41,7 @@ function FormulaireModif() {
       })
       .catch((error) => error);
   };
+  console.log(oneWine);
 
   return (
     <div>
@@ -98,7 +99,6 @@ function FormulaireModif() {
               type="type"
               name="id_type_vin"
               onChange={(e) => handleChange(e)}
-              defaultValue={oneWine === null ? '' : oneWine.couleur_vin}
               style={{
                 marginLeft: '20px',
                 width: '100px',
