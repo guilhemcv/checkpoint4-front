@@ -1,43 +1,50 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+/* eslint-disable function-paren-newline */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-plusplus */
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
-import './Formulaire.css';
 import axios from 'axios';
 
-function Formulaire() {
-  const [addVin, setAddVin] = React.useState({});
-  const url = 'http://localhost:3306/vin/ajouter';
+function FormulaireModif() {
+  const { id } = useParams();
+  const [oneWine, setOneWine] = useState(null);
+  const url = `http://${process.env.REACT_APP_PORT}/vin/${id}`;
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios.get('http://localhost:3306/vin').then((response) => {
+      setOneWine(
+        response.data.filter((vin) => parseInt(vin.id, 10) === parseInt(id, 10))[0]);
+    });
+  }, []);
 
   const handleChange = (e) => {
     const valeur = e.target.value;
-    setAddVin({
-      ...addVin,
+    setOneWine({
+      ...oneWine,
       [e.target.name]: valeur,
     });
   };
+
   const submit = (e) => {
     e.preventDefault();
     axios
-      .post(url, addVin)
+      .put(url, oneWine)
       .then((res) => {
         // eslint-disable-next-line no-console
         console.log(res.data);
-        alert('Nouveau vin sauvegardé !');
+        alert('vin modifié !');
         navigate('/allwine');
       })
       .catch((error) => error);
   };
 
-  /*   function createVin() {
-    axios
-      .post(url, addVin)
-      .then((response) => console.log(response.data));
-  } */
-
   return (
     <div>
-      <h2 className="titreForm">Ajouter un nouveau vin :</h2>
+      <h2 className="titreForm">Modifier le vin :</h2>
       <Form action="" className="ajout">
         <Form.Group className="mb-3" controlId="formBasicNom">
           <Form.Label>Nom du vin</Form.Label>
@@ -45,6 +52,7 @@ function Formulaire() {
             type="nom"
             name="nom"
             onChange={(e) => handleChange(e)}
+            defaultValue={oneWine === null ? '' : oneWine.nom}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicNb">
@@ -53,6 +61,7 @@ function Formulaire() {
             type="nb_bouteilles"
             name="nb_bouteilles"
             onChange={(e) => handleChange(e)}
+            defaultValue={oneWine === null ? '' : oneWine.nb_bouteilles}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicAnnee">
@@ -61,6 +70,7 @@ function Formulaire() {
             type="annee"
             name="annee"
             onChange={(e) => handleChange(e)}
+            defaultValue={oneWine === null ? '' : oneWine.annee}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicDegree">
@@ -69,6 +79,7 @@ function Formulaire() {
             type="degre"
             name="degre"
             onChange={(e) => handleChange(e)}
+            defaultValue={oneWine === null ? '' : oneWine.degre}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicDescription">
@@ -77,16 +88,17 @@ function Formulaire() {
             type="description"
             name="description"
             onChange={(e) => handleChange(e)}
+            defaultValue={oneWine === null ? '' : oneWine.description}
           />
         </Form.Group>
         <div className="drop">
           <div>
             <Form.Label>Type de vin</Form.Label>
             <select
-              defaultValue="Choisir"
               type="type"
               name="id_type_vin"
               onChange={(e) => handleChange(e)}
+              defaultValue={oneWine === null ? '' : oneWine.couleur_vin}
               style={{
                 marginLeft: '20px',
                 width: '100px',
@@ -108,7 +120,7 @@ function Formulaire() {
           <div>
             <Form.Label>Région</Form.Label>
             <select
-              defaultValue="Choisir"
+              defaultValue={oneWine === null ? '' : oneWine.nom_region}
               type="type"
               name="id_region"
               onChange={(e) => handleChange(e)}
@@ -147,6 +159,7 @@ function Formulaire() {
             type="prix"
             name="prix"
             onChange={(e) => handleChange(e)}
+            defaultValue={oneWine === null ? '' : oneWine.prix}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPrix">
@@ -155,6 +168,7 @@ function Formulaire() {
             type="text"
             name="image"
             onChange={(e) => handleChange(e)}
+            defaultValue={oneWine === null ? '' : oneWine.image}
           />
         </Form.Group>
         <Button
@@ -176,8 +190,9 @@ function Formulaire() {
           </Link>
         </Button>
       </Form>
+      ;
     </div>
   );
 }
 
-export default Formulaire;
+export default FormulaireModif;

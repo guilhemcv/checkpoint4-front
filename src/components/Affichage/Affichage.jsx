@@ -10,7 +10,6 @@ function Affichage() {
 
   useEffect(() => {
     axios.get(`http://${process.env.REACT_APP_PORT}/vin`).then((response) => {
-      console.log(response.data);
       setVins(response.data);
     });
   }, []);

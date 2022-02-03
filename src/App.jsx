@@ -4,6 +4,7 @@ import Accueil from './components/Accueil/Accueil';
 import './App.css';
 import Affichage from './components/Affichage/Affichage';
 import Formulaire from './components/Formulaire/Formulaire';
+import FormulaireModif from './components/FormulaireModif/FormulaireModif';
 
 function App() {
   return (
