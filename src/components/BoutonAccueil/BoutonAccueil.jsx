@@ -9,7 +9,6 @@ function BoutonAccueil(props) {
       <div className="bouton">
         <h2 className="titrebouton">{data.titre}</h2>
         <img src={data.logo} alt="loupe" className="logobouton" />
-        {/* <p className="describouton">{data.description}</p> */}
       </div>
     </Link>
   );

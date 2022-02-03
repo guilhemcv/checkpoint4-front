@@ -8,7 +8,11 @@ function Formulaire() {
   const [addVin, setAddVin] = React.useState({});
   const url = 'http://localhost:3306/vin/ajouter';
   const navigate = useNavigate();
-
+  /**
+   *Fonction qui actualise l'objet pour poster une nouvelle entrée
+   *
+   * @return {Object}
+   */
   const handleChange = (e) => {
     const valeur = e.target.value;
     setAddVin({
@@ -16,6 +20,11 @@ function Formulaire() {
       [e.target.name]: valeur,
     });
   };
+  /**
+   * Fonction qui envoie le vin dans la BDD
+   *
+   * @return {*}
+   */
   const submit = (e) => {
     e.preventDefault();
     axios
@@ -28,12 +37,6 @@ function Formulaire() {
       })
       .catch((error) => error);
   };
-
-  /*   function createVin() {
-    axios
-      .post(url, addVin)
-      .then((response) => console.log(response.data));
-  } */
 
   return (
     <div>

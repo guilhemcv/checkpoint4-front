@@ -2,13 +2,17 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import BoutonAccueil from '../BoutonAccueil/BoutonAccueil';
-/* import Caroussel from '../Caroussel/Caroussel';
- */ import './Accueil.css';
+import './Accueil.css';
 import databouton from '../../data/databouton';
 
 function Accueil() {
   const [somme, setSomme] = React.useState(null);
   const [price, setPrice] = React.useState(null);
+  /**
+   *UseEffect pour récupérer les données de calcul
+   *
+   * @return {*}
+   */
   useEffect(() => {
     axios
       .get('http://localhost:3306/vin/calculbouteille')

@@ -20,7 +20,7 @@ const databouton = [
     titre: 'Modifier une bouteille',
     logo: modify,
     description: 'Pour modifier un vin existante, cliquer ici',
-    link: '/allwine',
+    link: '/onewine/1',
   },
   {
     titre: 'Supprimer une bouteille',
