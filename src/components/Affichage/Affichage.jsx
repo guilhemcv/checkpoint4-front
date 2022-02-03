@@ -21,7 +21,6 @@ function Affichage() {
     axios.get(`http://${process.env.REACT_APP_PORT}/vin`).then((response) => {
       setVins(response.data);
       setFilteredWine(response.data);
-      console.log(response);
     });
   }, []);
 
@@ -30,20 +29,23 @@ function Affichage() {
     checkbox.forEach((check) => {
       if (check.checked) {
         const provWine = vins.filter((vin) => vin.couleur_vin === check.color);
-        console.log(provWine);
         newWine.push(...provWine);
-        console.log(newWine);
       }
     });
     if (newWine.length > 0) setFilteredWine(newWine);
     else setFilteredWine(vins);
   }, [checkbox]);
 
-  function handleCheckbox(index) {
+  /**
+   *Fonction pour filtrer sur les checkbox
+   *
+   * @return {array}
+   */
+  const handleCheckbox = (index) => {
     const newCheckbox = [...checkbox];
     newCheckbox[index].checked = !newCheckbox[index].checked;
     setCheckbox(newCheckbox);
-  }
+  };
 
   return (
     <div>

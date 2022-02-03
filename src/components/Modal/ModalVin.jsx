@@ -20,6 +20,11 @@ function ModalVin(props) {
     navigate('/allwine');
   };
 
+  /**
+   *Fonction qui delete l'entrée
+   *
+   * @return {*}
+   */
   const deleteWine = () => {
     axios
       .delete(`http://${process.env.REACT_APP_PORT}/vin/${vins[index].id}`)

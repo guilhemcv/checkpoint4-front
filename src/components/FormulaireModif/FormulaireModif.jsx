@@ -21,6 +21,11 @@ function FormulaireModif() {
     });
   }, []);
 
+  /**
+   *Fonction qui met a jour l'objet pour modifier l'entrée
+   *
+   * @return {Object}
+   */
   const handleChange = (e) => {
     const valeur = e.target.value;
     setOneWine({
@@ -28,7 +33,11 @@ function FormulaireModif() {
       [e.target.name]: valeur,
     });
   };
-
+  /**
+   *Fonction qui envoie la modification de l'entrée
+   *
+   * @return {*}
+   */
   const submit = (e) => {
     e.preventDefault();
     axios
@@ -41,7 +50,6 @@ function FormulaireModif() {
       })
       .catch((error) => error);
   };
-  console.log(oneWine);
 
   return (
     <div>
