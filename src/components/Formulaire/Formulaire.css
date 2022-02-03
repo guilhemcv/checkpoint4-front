@@ -18,6 +18,15 @@
   color : #1A8754;
 }
 
+.link2 {
+  text-decoration: none;
+  color: #FFC008;
+}
+
+.link2:hover {
+  color: white;
+}
+
 .link:hover {
   color: white;
 }

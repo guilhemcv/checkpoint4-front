@@ -74,11 +74,17 @@ function ModalVin(props) {
           <Button variant="outline-success" onClick={props.onHide}>
             Retour a la collection
           </Button>
-          <Button variant="outline-success" onClick={props.onHide}>
-            <Link to={`/onewine/${vins[index].id}`}>Modif un vin</Link>
+          <Button variant="outline-warning" onClick={props.onHide}>
+            <Link className="link2" to={`/onewine/${vins[index].id}`}>
+              Modifier entrée
+            </Link>
           </Button>
           <div onClick={props.onHide}>
-            <Button onHide={handleClose} variant="danger" onClick={handleShow}>
+            <Button
+              onHide={handleClose}
+              variant="outline-danger"
+              onClick={handleShow}
+            >
               Supprimer cette entrée
             </Button>
           </div>

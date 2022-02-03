@@ -10,6 +10,16 @@
   flex-direction: space-around;
 }
 
+.filtre-couleur {
+  margin: 10px auto;
+  width: 200px;
+  text-align: justify;
+}
+
+label {
+  margin-left: 20px;
+}
+
 @media screen and (max-width: 400px) {
   .buttonaffichage {
     display: flex;
