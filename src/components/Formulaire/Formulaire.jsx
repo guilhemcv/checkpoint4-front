@@ -81,22 +81,68 @@ function Formulaire() {
             onChange={(e) => handleChange(e)}
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicType">
-          <Form.Label>Type de vin</Form.Label>
-          <Form.Control
-            type="type"
-            name="id_type_vin"
-            onChange={(e) => handleChange(e)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicRegion">
-          <Form.Label>Région</Form.Label>
-          <Form.Control
-            type="region"
-            name="id_region"
-            onChange={(e) => handleChange(e)}
-          />
-        </Form.Group>
+        <div className="drop">
+          <div>
+            <Form.Label>Type de vin</Form.Label>
+            <select
+              defaultValue="Choisir"
+              type="type"
+              name="id_type_vin"
+              onChange={(e) => handleChange(e)}
+              style={{
+                marginLeft: '20px',
+                width: '100px',
+                height: '40px',
+                background: 'white',
+                border: 'solid 1px #1A8754',
+                borderRadius: '5px',
+                color: '#1A8754',
+              }}
+            >
+              <option>Choisir</option>
+              <option value="1">Rouge</option>
+              <option value="2">Blanc</option>
+              <option value="3">Rosé</option>
+              <option value="4">Liquoreux</option>
+              <option value="5">Mousseux</option>
+            </select>
+          </div>
+          <div>
+            <Form.Label>Région</Form.Label>
+            <select
+              defaultValue="Choisir"
+              type="type"
+              name="id_region"
+              onChange={(e) => handleChange(e)}
+              style={{
+                marginLeft: '20px',
+                marginTop: '20px',
+                width: '100px',
+                height: '40px',
+                background: 'white',
+                border: 'solid 1px #1A8754',
+                borderRadius: '5px',
+                color: '#1A8754',
+              }}
+            >
+              <option>Choisir</option>
+              <option value="1">Loire</option>
+              <option value="2">Champagne</option>
+              <option value="3">Chablis</option>
+              <option value="4">Alsace</option>
+              <option value="5">Bourgogne</option>
+              <option value="6">Jura</option>
+              <option value="7">Savoie</option>
+              <option value="8">Beaujolais</option>
+              <option value="9">Bordeaux</option>
+              <option value="10">Rhone</option>
+              <option value="11">Sud Ouest</option>
+              <option value="12">Languedoc Roussillon</option>
+              <option value="13">Provence</option>
+              <option value="14">Corse</option>
+            </select>
+          </div>
+        </div>
         <Form.Group className="mb-3" controlId="formBasicPrix">
           <Form.Label>Prix de la bouteille</Form.Label>
           <Form.Control
