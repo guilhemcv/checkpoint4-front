@@ -7,7 +7,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function ModalVin(props) {
   const { vins, index } = props;
@@ -63,13 +63,19 @@ function ModalVin(props) {
             <h6>Degrés : {vins[index].degre}°</h6>
             <h6>Bouteilles en stock : {vins[index].nb_bouteilles}</h6>
             <h6>Prix de la bouteille : {vins[index].prix} euros</h6>
-            <h6>Valeur en cave: {vins[index].prix * vins[index].nb_bouteilles} euros</h6>
+            <h6>
+              Valeur en cave: {vins[index].prix * vins[index].nb_bouteilles}{' '}
+              euros
+            </h6>
           </div>
           <p>{vins[index].description}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="outline-success" onClick={props.onHide}>
             Retour a la collection
+          </Button>
+          <Button variant="outline-success" onClick={props.onHide}>
+            <Link to={`/onewine/${vins[index].id}`}>Modif un vin</Link>
           </Button>
           <div onClick={props.onHide}>
             <Button onHide={handleClose} variant="danger" onClick={handleShow}>
