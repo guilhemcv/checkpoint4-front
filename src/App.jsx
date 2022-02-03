@@ -12,6 +12,7 @@ function App() {
         <Route exact path="/" element={<Accueil />} />
         <Route exact path="/allwine" element={<Affichage />} />
         <Route exact path="/addwine" element={<Formulaire />} />
+        <Route path="/onewine/:id" element={<FormulaireModif />} />
       </Routes>
     </div>
   );
