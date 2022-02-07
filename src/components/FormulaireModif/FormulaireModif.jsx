@@ -15,7 +15,7 @@ function FormulaireModif() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3306/vin/ajout').then((response) => {
+    axios.get('https://checkpoint4.herokuapp.com/vin/ajout').then((response) => {
       setOneWine(
         response.data.filter((vin) => parseInt(vin.id, 10) === parseInt(id, 10))[0]);
     });
@@ -45,7 +45,6 @@ function FormulaireModif() {
       .then((res) => {
         // eslint-disable-next-line no-console
         console.log(res.data);
-        alert('vin modifié !');
         navigate('/allwine');
       })
       .catch((error) => error);

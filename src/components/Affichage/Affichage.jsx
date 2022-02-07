@@ -18,7 +18,7 @@ function Affichage() {
   ]);
 
   useEffect(() => {
-    axios.get(`http://${process.env.REACT_APP_PORT}/vin`).then((response) => {
+    axios.get('https://checkpoint4.herokuapp.com/vin').then((response) => {
       setVins(response.data);
       setFilteredWine(response.data);
     });
@@ -61,7 +61,9 @@ function Affichage() {
           </Link>
         </Button>
       </div>
-      <h6 style={{ margin: 'auto', textAlign: 'center' }}>Classer par type de vin :</h6>
+      <h6 style={{ margin: 'auto', textAlign: 'center' }}>
+        Classer par type de vin :
+      </h6>
       {checkbox.map((vin, index) => (
         <div key={checkbox.color} className="filtre-couleur">
           <input

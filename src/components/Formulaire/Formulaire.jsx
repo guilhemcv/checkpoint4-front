@@ -6,7 +6,7 @@ import axios from 'axios';
 
 function Formulaire() {
   const [addVin, setAddVin] = React.useState({});
-  const url = 'http://localhost:3306/vin/ajouter';
+  const url = 'https://checkpoint4.herokuapp.com/vin/ajouter';
   const navigate = useNavigate();
   /**
    *Fonction qui actualise l'objet pour poster une nouvelle entrée
@@ -32,7 +32,6 @@ function Formulaire() {
       .then((res) => {
         // eslint-disable-next-line no-console
         console.log(res.data);
-        alert('Nouveau vin sauvegardé !');
         navigate('/allwine');
       })
       .catch((error) => error);

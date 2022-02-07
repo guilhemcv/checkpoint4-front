@@ -15,10 +15,10 @@ function Accueil() {
    */
   useEffect(() => {
     axios
-      .get('http://localhost:3306/vin/calculbouteille')
+      .get('https://checkpoint4.herokuapp.com/vin/calculbouteille')
       .then((res) => setSomme(res.data));
     axios
-      .get('http://localhost:3306/vin/calculprix')
+      .get('https://checkpoint4.herokuapp.com/vin/calculprix')
       .then((res) => setPrice(res.data));
   }, []);
 
