@@ -62,4 +62,7 @@
   .accueil {
     background-image: none;
 }
+  .bout {
+    margin: 30px auto;
+  }
 }

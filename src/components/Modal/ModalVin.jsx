@@ -27,8 +27,7 @@ function ModalVin(props) {
    */
   const deleteWine = () => {
     axios
-      .delete(`https://checkpoint4.herokuapp.com/vin/${vins[index].id}`)
-      .then(() => console.log('Vin supprimé'));
+      .delete(`https://checkpoint4.herokuapp.com/vin/${vins[index].id}`);
     setShow(false);
     window.location.reload(false);
   };
