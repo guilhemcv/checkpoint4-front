@@ -1,40 +1,17 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import './Formulaire.css';
-import axios from 'axios';
 
 function Formulaire() {
   const [addVin, setAddVin] = React.useState({});
-  const url = 'https://checkpoint4.herokuapp.com/vin/ajouter';
-  const navigate = useNavigate();
-  /**
-   *Fonction qui actualise l'objet pour poster une nouvelle entrée
-   *
-   * @return {Object}
-   */
+
   const handleChange = (e) => {
     const valeur = e.target.value;
     setAddVin({
       ...addVin,
       [e.target.name]: valeur,
     });
-  };
-  /**
-   * Fonction qui envoie le vin dans la BDD
-   *
-   * @return {*}
-   */
-  const submit = (e) => {
-    e.preventDefault();
-    axios
-      .post(url, addVin)
-      .then((res) => {
-        // eslint-disable-next-line no-console
-        console.log(res.data);
-        navigate('/allwine');
-      })
-      .catch((error) => error);
   };
 
   return (
@@ -159,12 +136,7 @@ function Formulaire() {
             onChange={(e) => handleChange(e)}
           />
         </Form.Group>
-        <Button
-          className="buttonform"
-          type="submit"
-          variant="outline-success"
-          onClick={(e) => submit(e)}
-        >
+        <Button className="buttonform" type="submit" variant="outline-success">
           Valider
         </Button>
         <Button className="buttonform" type="submit" variant="outline-success">

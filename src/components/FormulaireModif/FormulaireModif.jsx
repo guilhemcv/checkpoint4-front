@@ -4,21 +4,22 @@
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import axios from 'axios';
 
 function FormulaireModif() {
   const { id } = useParams();
   const [oneWine, setOneWine] = useState(null);
-  const url = `http://${process.env.REACT_APP_PORT}/vin/${id}`;
-  const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('https://checkpoint4.herokuapp.com/vin/ajout').then((response) => {
-      setOneWine(
-        response.data.filter((vin) => parseInt(vin.id, 10) === parseInt(id, 10))[0]);
-    });
+    axios
+      .get('https://checkpoint4.herokuapp.com/vin/ajout')
+      .then((response) => {
+        setOneWine(
+          response.data.filter(
+            (vin) => parseInt(vin.id, 10) === parseInt(id, 10))[0]);
+      });
   }, []);
 
   /**
@@ -32,22 +33,6 @@ function FormulaireModif() {
       ...oneWine,
       [e.target.name]: valeur,
     });
-  };
-  /**
-   *Fonction qui envoie la modification de l'entrée
-   *
-   * @return {*}
-   */
-  const submit = (e) => {
-    e.preventDefault();
-    axios
-      .put(url, oneWine)
-      .then((res) => {
-        // eslint-disable-next-line no-console
-        console.log(res.data);
-        navigate('/allwine');
-      })
-      .catch((error) => error);
   };
 
   return (
@@ -182,7 +167,6 @@ function FormulaireModif() {
           className="buttonform"
           type="submit"
           variant="outline-success"
-          onClick={(e) => submit(e)}
         >
           Valider
         </Button>
