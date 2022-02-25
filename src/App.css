@@ -1,0 +1,42 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+li,
+ul,
+ol {
+  list-style: none;
+  display: inline-block;
+}
+
+#root {
+  height: 100vh;
+}
+.App {
+  height: 100%;
+}
+
+body iframe {
+  pointer-events: none;
+}
+body {
+  background-color: white !important;
+}
+
+h6 {
+  text-decoration: underline;
+}

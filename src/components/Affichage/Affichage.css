@@ -1,0 +1,37 @@
+.marg {
+  margin: 50px 20px;
+  text-align: center;
+  display: flex;
+}
+
+.buttonaffichage {
+  display: flex;
+  justify-content: center;
+  flex-direction: space-around;
+}
+
+.filtre-couleur {
+  margin: 10px auto;
+  width: 200px;
+  text-align: justify;
+}
+
+label {
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  .buttonaffichage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  } 
+  .marg {
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    width: 100px;
+  }
+}
